@@ -1,0 +1,63 @@
+.cloud {
+  --cloud-ink: #1c1917;
+  --cloud-muted: #766d64;
+  --cloud-line: #e6ded3;
+  --cloud-accent: #a47650;
+  box-sizing: border-box;
+  width: 100%;
+  padding: clamp(22px, 4vw, 38px);
+  border: 1px solid #e9e1d7;
+  background: #fffdfa;
+  color: var(--cloud-ink);
+  font-family: 'DM Sans', sans-serif;
+}
+.cloud *, .cloud *::before, .cloud *::after { box-sizing: border-box; }
+.cloud-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; padding-bottom: 25px; border-bottom: 1px solid var(--cloud-line); }
+.cloud-eyebrow, .cloud-action-number { color: #9b7659; font-size: 10px; font-weight: 700; letter-spacing: .15em; }
+.cloud-heading h2 { margin: 11px 0 9px; font: 500 clamp(25px, 3vw, 36px)/1.15 'Playfair Display', Georgia, serif; letter-spacing: -.025em; }
+.cloud-heading h2 em { color: var(--cloud-accent); font-weight: 500; }
+.cloud-heading p, .cloud-action p, .cloud-footer p, .cloud-hint, .cloud-storage-note { margin: 0; color: var(--cloud-muted); font-size: 12px; line-height: 1.7; }
+.cloud-mark { display: grid; place-items: center; flex: 0 0 38px; height: 38px; border: 1px solid #c29a79; color: #a47650; font: 600 12px 'Playfair Display', Georgia, serif; }
+.cloud-session { display: flex; align-items: center; gap: 9px; padding: 22px 0; color: #6c635a; font-size: 12px; overflow-wrap: anywhere; }
+.cloud-dot { flex: 0 0 7px; width: 7px; height: 7px; border-radius: 50%; background: #b5aaa0; }
+.cloud-dot--connected { background: #758960; }
+.cloud-auth { max-width: 520px; }
+.cloud-switch { display: flex; gap: 26px; border-bottom: 1px solid var(--cloud-line); }
+.cloud-switch button { padding: 0 0 12px; border: 0; border-bottom: 2px solid transparent; background: transparent; color: #81766c; font: inherit; font-size: 12px; cursor: pointer; }
+.cloud-switch button.is-active { color: var(--cloud-ink); border-bottom-color: var(--cloud-accent); }
+.cloud-form { display: grid; gap: 14px; padding-top: 22px; }
+.cloud-form label { display: grid; gap: 7px; color: #655a50; font-size: 11px; font-weight: 600; }
+.cloud-form input { width: 100%; min-width: 0; min-height: 44px; padding: 11px 12px; border: 1px solid #ded6cc; border-radius: 0; background: #fff; color: var(--cloud-ink); font: inherit; font-size: 14px; }
+.cloud-button { display: inline-flex; align-items: center; justify-content: center; min-height: 43px; padding: 11px 17px; border: 1px solid var(--cloud-ink); border-radius: 0; font: 600 11px/1.4 'DM Sans', sans-serif; text-align: center; cursor: pointer; transition: background-color .2s, color .2s, border-color .2s; }
+.cloud-button--dark { background: var(--cloud-ink); color: #fffaf3; }
+.cloud-button--dark:hover:not(:disabled) { background: #44362c; border-color: #44362c; }
+.cloud-button--outline { background: transparent; color: var(--cloud-ink); }
+.cloud-button--outline:hover:not(:disabled) { background: #f3eee8; }
+.cloud button:disabled, .cloud input:disabled { cursor: not-allowed; opacity: .55; }
+.cloud button:focus-visible, .cloud input:focus-visible { outline: 2px solid #a47650; outline-offset: 3px; }
+.cloud-hint { margin-top: 13px; }
+.cloud-actions { border-top: 1px solid var(--cloud-line); }
+.cloud-action { display: flex; align-items: center; justify-content: space-between; gap: 22px; padding: 24px 0; border-bottom: 1px solid var(--cloud-line); }
+.cloud-action h3 { margin: 7px 0 5px; font: 500 20px 'Playfair Display', Georgia, serif; }
+.cloud-action p { max-width: 460px; }
+.cloud-action .cloud-button { flex: 0 0 auto; }
+.cloud-preview { margin-top: 18px; padding: 20px; border: 1px solid #d7c7b7; background: #f8f3ed; }
+.cloud-preview p { color: #6d5b4d; font-size: 12px; line-height: 1.7; }
+.cloud-preview strong { display: block; font-size: 12px; line-height: 1.6; }
+.cloud-preview-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 16px; }
+.cloud-footer { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding-top: 19px; }
+.cloud-link { flex: 0 0 auto; padding: 5px 0; border: 0; background: transparent; color: #8e694d; font: inherit; font-size: 12px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.cloud-progress { color: #7a6a5e; font-size: 12px; }
+.cloud-notice { display: grid; gap: 5px; margin-top: 18px; padding: 14px 16px; border-left: 3px solid #b8a28c; background: #f5f1eb; color: #5a5046; font-size: 12px; line-height: 1.65; overflow-wrap: anywhere; }
+.cloud-notice--success { border-left-color: #788c67; background: #f1f5ed; color: #405039; }
+.cloud-notice--error { border-left-color: #b46455; background: #fbf1ef; color: #793f36; }
+.cloud-storage-note { margin-top: 24px; padding-top: 17px; border-top: 1px solid var(--cloud-line); font-size: 11px; }
+@media (max-width: 600px) {
+  .cloud { padding: 21px 18px; }
+  .cloud-heading h2 { font-size: 26px; }
+  .cloud-mark { flex-basis: 32px; height: 32px; }
+  .cloud-action { align-items: stretch; flex-direction: column; gap: 14px; }
+  .cloud-action .cloud-button, .cloud-form .cloud-button { width: 100%; }
+  .cloud-preview-actions { flex-direction: column; }
+  .cloud-footer { align-items: flex-start; flex-direction: column; gap: 10px; }
+}
